@@ -1,0 +1,22 @@
+{
+  "name": "prog3",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nareknahapetyan2004/prog3.git"
+  },
+  "author": "Narek Nahapetyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nareknahapetyan2004/prog3/issues"
+  },
+  "homepage": "https://github.com/nareknahapetyan2004/prog3#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
