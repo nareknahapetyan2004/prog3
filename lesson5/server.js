@@ -12,11 +12,18 @@ server.listen(8080);
 
 
 io.on('connection', function (socket) {
-   for(var i in messages) {
-     io.sockets.emit("display message", messages[i]);
-   }
-   socket.on("send message", function (data) {
-       messages.push(data);
-       io.sockets.emit("display message", data);
-   })
+    for (var i in messages) {
+        io.sockets.emit("display message", messages[i]);
+    }
+    socket.on("send message", function (data) {
+        messages.push(data);
+        io.sockets.emit("display message", data);
+
+        socket.on("jnjel", function () {
+            messages = [];
+            io.sockets.emit("jnjeq tager@");
+        });
+
+    });
 });
+

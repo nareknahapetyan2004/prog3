@@ -3,7 +3,7 @@ function main() {
     var chatDiv = document.getElementById('chat');
     var input = document.getElementById('message');
     var button = document.getElementById('submit');
-    var jnjel = document.getElementById('Delete all messages');
+    var jnjel = document.getElementById('delete');
 
     function handleSubmit(evt) {
         var val = input.value;
@@ -13,7 +13,7 @@ function main() {
     }
 
     button.onclick = handleSubmit;
-    jnjel.onclick = handleSubmit;
+    jnjel.onclick = deleteTags;
 
     function handleMessage(msg) {
         var p = document.createElement('p');
@@ -23,6 +23,33 @@ function main() {
     }
 
     socket.on('display message', handleMessage);
-} // main closing bracket
+    socket.on("jnjeq teger@", deleteTags);
 
-window.onload = main;
+    function deleteTags() {
+        var elements = document.getElementsByTagName("p");
+
+        for (var i in elements) {
+            elements[0].remove();
+
+            if (elements.length == 0) {
+                break;
+            }
+        }
+    };
+    window.onkeydown = keySubmit;
+
+
+    function keySubmit(evt) {
+        if (evt.keyCode == 13) {
+            var val = input.value;
+            if (val != "") {
+                socket.emit("send message", val);
+            }
+        }
+    }
+}
+
+
+    // main closing bracket
+
+    window.onload = main;
